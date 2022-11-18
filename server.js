@@ -8,7 +8,7 @@ const path = require("path");
 
 connectDB();
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.json({ extended: false }));
 app.use("/redirect", express.static(__dirname + "/public"));
 
 app.use("/", require("./routes/redirect"));

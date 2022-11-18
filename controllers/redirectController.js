@@ -7,7 +7,7 @@ const redirectController = async (req, res) => {
   if (!foundLink) {
     return res.sendFile(path.join(__dirname, "..", "views", "404.html"));
   }
-  res.redirect(`http://${foundLink.url}`);
+  res.redirect(`${foundLink.url}`);
 };
 
 module.exports = redirectController;
