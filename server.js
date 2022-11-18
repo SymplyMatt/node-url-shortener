@@ -11,8 +11,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use("/redirect", express.static(__dirname + "/public"));
 
+app.use("/", require("./routes/redirect"));
 app.use("/shorten", require("./routes/shorten"));
-app.use("/redirect", require("./routes/redirect"));
 
 mongoose.connection.once("open", () => {
   console.log("Connected to MongoDB");
